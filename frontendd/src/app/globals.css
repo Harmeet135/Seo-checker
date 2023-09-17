@@ -17,6 +17,15 @@
 }
 
 body {
+  overflow-x: hidden;
  box-sizing: border-box;
  background-color: #181a1b;
+ 
+}
+
+h1{
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 1rem 0;
 }

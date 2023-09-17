@@ -1,0 +1,40 @@
+.we-box {
+    margin-top: 3rem;
+    border: 1px solid #676565;
+    border-radius: 5px;
+    padding: 10px;
+    width: 13rem;
+}
+
+.we-box h1 {
+        display: flex;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 1rem 0;
+        align-items: center;
+        gap: 1rem;
+}
+
+#score{
+    margin-top: 4rem;
+}
+
+#res {
+    display: flex;
+    width: 39rem;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+
+#res h3 {
+    display: flex;
+    font-weight: 300;
+    width: 9rem;
+}
+
+.wee-boxes{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}

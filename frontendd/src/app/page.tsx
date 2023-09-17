@@ -5,7 +5,7 @@ import Search from '../components/Search';
 const page = () => {
   return (
     <main>
-      <h1>Page</h1>
+      <h1>Seo Checker</h1>
       <Search />
     </main>
   )

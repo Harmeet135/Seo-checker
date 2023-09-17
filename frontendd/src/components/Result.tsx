@@ -1,46 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { FcApproval, FcBookmark } from "react-icons/fc";
+import "../styles/Result.css";
 
 interface IPROPS {
   searchResults?: any;
 }
 
 const Result: React.FC<IPROPS> = ({ searchResults }) => {
-  console.log(searchResults,"results");
-  console.log(searchResults.onpage_score,"results");
-
-
   const [searchResultData, setSearchResultData] = useState<any>(null);
 
-  // useEffect(() => {
-  //   if (searchResults) {
-  //     setLoading(true);
-  //     fetch(`http://localhost:8000/user/${searchResults}`)
-  //       .then(response => {
-  //         if (response.ok) {
-  //           console.log(response);
-  //           setLoading(false);
-  //         } else {
-  //           throw new Error('Error retrieving page');
-  //         }
-  //       })
-  //       .then(data => {
-  //         setSearchResultData(data);
-  //         setLoading(false);
-  //       })
-  //       .catch(error => {
-  //         console.error(error);
-  //         setLoading(false);
-  //       });
-  //   }
-  // }, [searchResults]);
-
   return (
-    <div>
+    <div className="res-box">
+      {searchResults ? (<div id="res"> <h3>Result For</h3>- <div>{searchResults.url}</div></div>): (
       <h2>Search Results</h2>
-    
-     { searchResults ? (
+      )}
+
+      {searchResults ? (
         <ul>
-        {searchResults.onpage_score}
+          <div id="score">
+            <h1>Score - {searchResults.onpage_score} </h1>
+          </div>
+          <div className="wee-boxes">
+          <div className="we-box">
+            <h1>
+              {searchResults.resource_errors.errors &&
+                searchResults.resource_errors.errors.length > 0 ? (
+               
+                  <FcBookmark />
+                  ) : (
+                    <FcApproval />
+                  )}
+              Error :
+              {searchResults.resource_errors.errors
+                ? searchResults.resource_errors.errors.length
+                : 0}
+            </h1>
+          </div>
+
+          <div className="we-box">
+            <h1>
+              {searchResults.resource_errors.warnings &&
+              searchResults.resource_errors.warnings.length > 0 ? (
+                <FcBookmark />
+              ) : (
+                <FcApproval />
+              )}
+              Warnings :{" "}
+              {searchResults.resource_errors.warnings
+                ? searchResults.resource_errors.warnings.length
+                : 0}
+            </h1>
+          </div>
+          </div>
         </ul>
       ) : (
         <p></p>

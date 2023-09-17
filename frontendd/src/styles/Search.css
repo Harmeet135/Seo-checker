@@ -6,6 +6,14 @@
     display: flex;
 }
 
+.form-box form{
+    width: 40rem;
+    margin: auto;
+    align-items: center ;
+    justify-content: center;
+    display: flex;
+}
+
 .form-box input{
     width: 100%;
     font-size: 18px;
@@ -34,11 +42,40 @@
     color: aliceblue;
     font-size: 20px;
     width: 40rem;
-    margin: 4rem auto auto auto;
+    margin: 4rem auto;
     align-items: center ;
     justify-content: center;
     display: flex;
     flex-direction: column;
 }
 
+@media (max-width: 768px) {
+    .form-box {
+        width: 20rem;
+    }
 
+    /* .form-box form{
+        width: 20rem;
+        display: block;
+    } */
+
+
+    .form-box form {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .form-box input{
+        width: 83%;
+    }
+
+    .form-box button {
+        width: 93%;
+    }
+
+    .res-upper {
+        font-size: 12px;
+        width: 16rem;
+    }
+  }
+  
