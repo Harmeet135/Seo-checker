@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
-import router from '../backend/routes/route.js';
+import router from './routes/route.js';
 
 const app = express();
 app.use(cors());
