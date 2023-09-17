@@ -27,7 +27,6 @@ export const createreq = async (req, res) => {
       custom_js: "meta = {}; meta.url = document.URL; meta;",
     };
 
-    console.log("data -2 ", postObject);
 
     const API_USERNAME = process.env.API_USERNAME;
     const API_PASSWORD = process.env.API_PASSWORD;

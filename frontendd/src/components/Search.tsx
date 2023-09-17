@@ -26,11 +26,10 @@ const Search = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/user", {
+      const response = await axios.post("https://seo-checker-production.up.railway.app/user", {
         search
       });
       setSearchResults(response.data.tasks[0].result[0].items[0]);
-      console.log(response.data.tasks[0].result[0].items[0]);
       setLoading(false);
       setSearch(''); 
     } catch (error) {
