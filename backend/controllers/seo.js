@@ -4,23 +4,23 @@ export const createreq = async (req, res) => {
   try {
     console.log("Request Body: -- 1", req.body); 
     const userTarget = req.body.search;
-
+    console.log("userTarget", userTarget);
     const postObject = {
-      target: userTarget,
-      max_crawl_pages: 10,
+      url: userTarget,
+      // max_crawl_pages: 10,
       load_resources: true,
       enable_javascript: true,
       custom_js: "meta = {}; meta.url = document.URL; meta;",
-      tag: "some_string_123",
-      pingback_url: "https://your-server.com/pingscript?id=$id&tag=$tag"
+      // tag: "some_string_123",
+      // pingback_url: "https://your-server.com/pingscript?id=$id&tag=$tag"
     };
 
     console.log("data   -2 ", postObject);
-    const API_USERNAME = "gamerplayer1357@gmail.com";
-    const API_PASSWORD = "014ffc2c5ea4cd7b";
+    const API_USERNAME = "rajatchauhan02736@gmail.com";
+    const API_PASSWORD = "4ec7fb0ec4c862a5";
 
     const response = await axios.post(
-      "https://api.dataforseo.com/v3/on_page/task_post",
+      "https://api.dataforseo.com/v3/on_page/instant_pages",
       [postObject],
       {
         auth: {
@@ -29,9 +29,7 @@ export const createreq = async (req, res) => {
         },
       }
     );
-    
-    // const taskId = response.data.tasks[0].id;
-    // generatereq(taskId, res); 
+
     res.json(response.data);
 
   } catch (error) {
@@ -39,24 +37,27 @@ export const createreq = async (req, res) => {
   }
 };
 
-export const generatereq = async (id, res) => {
+export const generatereq = async (req, res) => {
   console.log("called");
-  const API_USERNAME = "gamerplayer1357@gmail.com";
-  const API_PASSWORD = "014ffc2c5ea4cd7b";
-
-  try {
-    const response = await axios.get(
-      `https://api.dataforseo.com/v3/on_page/summary/${id}`,
-      {
-        auth: {
-          username: API_USERNAME,
-          password: API_PASSWORD,
-        },
-      }
-    );
-    res.json(response.data);
-  } catch (error) {
-    console.error("GET Error:", error);
-    res.status(500).json({ error: "An error occurred while fetching data." });
-  }
-};
+    const { id } = req.params;
+    console.log("id", id);
+    const API_USERNAME = "rajatchauhan02736@gmail.com";
+    const API_PASSWORD = "4ec7fb0ec4c862a5";
+  
+    try {
+      const response = await axios.get(
+        `https://api.dataforseo.com/v3/on_page/summary/${id}`,
+        {
+          auth: {
+            username: API_USERNAME,
+            password: API_PASSWORD,
+          },
+        }
+      );
+      res.json(response.data);
+    } catch (error) {
+      console.error("GET Error:", error);
+      res.status(500).json({ error: "An error occurred while fetching data." });
+    }
+  };
+  

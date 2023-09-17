@@ -1,0 +1,44 @@
+.form-box{
+    width: 40rem;
+    margin: auto;
+    align-items: center ;
+    justify-content: center;
+    display: flex;
+}
+
+.form-box input{
+    width: 100%;
+    font-size: 18px;
+    padding: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    font-weight: 500;
+}
+
+.form-box button{
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-weight: 900;
+    margin: 10px;
+    color: #ccc;
+    background-color: #cc2626;
+    cursor: pointer;
+    border: none;
+}
+
+.res-upper{
+    color: aliceblue;
+    font-size: 20px;
+    width: 40rem;
+    margin: 4rem auto auto auto;
+    align-items: center ;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
