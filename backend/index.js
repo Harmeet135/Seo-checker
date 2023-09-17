@@ -1,6 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 
 import router from '../backend/routes/route.js';
 
@@ -12,6 +13,8 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 app.use("/user", router)
+
+dotenv.config();
 
 app.get("/", (req ,res) => {
     res.send("Hello from Express");

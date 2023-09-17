@@ -11,7 +11,7 @@ const Result: React.FC<IPROPS> = ({ searchResults }) => {
 
   return (
     <div className="res-box">
-      {searchResults ? (<div id="res"> <h3>Result For</h3>- <div>{searchResults.url}</div></div>): (
+      {searchResults ? (<div id="res-cont"><div id="res"> Result For - </div><div> {searchResults.url}</div></div>): (
       <h2>Search Results</h2>
       )}
 
